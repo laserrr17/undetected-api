@@ -12,7 +12,7 @@ def submit_document(content):
         "strength": "More Human"
     })
     headers = {
-        'api-key': '1698466102307x152869854390923940',
+        'api-key': 'your-api-key',
         'Content-Type': 'application/json'
     }
 
@@ -30,7 +30,7 @@ def retrieve_document(document_id):
         "id": document_id
     })
     headers = {
-        'api-key': '1698466102307x152869854390923940',
+        'api-key': 'your-api-key',
         'Content-Type': 'application/json'
     }
 
