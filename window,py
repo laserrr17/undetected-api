@@ -1,46 +1,9 @@
-import requests
-import json
 import tkinter as tk
 from tkinter import scrolledtext
+import requests
+import json
 
-# Function to submit the document and get the document ID
-def submit_document(content):
-    url = "https://api.undetectable.ai/submit"
-    payload = json.dumps({
-        "content": content,
-        "readability": "High School",
-        "purpose": "General Writing",
-        "strength": "More Human"
-    })
-    headers = {
-        'api-key': 'Your API Key',
-        'Content-Type': 'application/json'
-    }
-
-    response = requests.post(url, headers=headers, data=payload)
-    if response.status_code == 200:
-        return response.json().get('id')
-    else:
-        print("Error submitting document:", response.text)
-        return None
-
-# Function to retrieve the document
-def retrieve_document(document_id):
-    url = "https://api.undetectable.ai/document"
-    payload = json.dumps({
-        "id": document_id
-    })
-    headers = {
-        'api-key': 'Your API Key',
-        'Content-Type': 'application/json'
-    }
-
-    response = requests.request("POST", url, headers=headers, data=payload)
-    if response.status_code == 200:
-        return response.json().get('output')
-    else:
-        print("Error retrieving document:", response.text)
-        return None
+# Assuming the submit_document and retrieve_document functions are defined as in your script
 
 class UndetectedApp:
     def __init__(self, master):
